@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+</head>
+<body>
+    <h1>Factorial of Last Two Digits of Matric Number</h1>
+    
+    <!-- Button to trigger the factorial calculation -->
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+
+    <!-- Display the result -->
+    <p id="result"></p>
+
+    <script>
+        // Function to calculate factorial recursively
+        const factorial = n => n <= 1 ? 1 : n * factorial(n - 1);
+
+        // Function to extract the last two digits and calculate factorial
+        function calculateFactorial() {
+            const matricNumber = "21cj029221"; // Matric number
+            const lastTwoDigits = parseInt(matricNumber.slice(-2), 10); // Extract and convert last two digits
+
+            // Calculate the factorial
+            const fact = factorial(lastTwoDigits);
+
+            // Display the result on the webpage
+            document.getElementById("result").textContent = `The factorial of ${lastTwoDigits} is ${fact}`;
+        }
+    </script>
+</body>
+</html>
